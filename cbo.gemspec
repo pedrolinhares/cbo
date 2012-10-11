@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "cbo.gemspec",
     "files/CBO2002 - Familia.txt",
     "files/CBO2002 - Grande Grupo.txt",
     "files/CBO2002 - Ocupacao.txt",
