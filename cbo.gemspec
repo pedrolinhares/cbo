@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "cbo"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Pedro Henrique Linhares"]
-  s.date = "2012-10-11"
+  s.date = "2012-11-21"
   s.description = "Gem para obter os cbos (Classifica\u{e7}\u{e3}o Brasileira de Ocupa\u{e7}\u{f5}es)"
   s.email = "pedrolmota@gmail.com"
   s.extra_rdoc_files = [
