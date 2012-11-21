@@ -14,8 +14,24 @@ describe 'Cbo' do
     cbo.familia('010210').should == 'Oficiais das forças armadas'
   end
 
-  it 'busca ocupacoes por nome, retornando hash com todas que combinem com a busca' do
-    cbo.buscar_ocupacoes('major').should == {'020115' => 'Major da polícia militar',
-                                             '030110' => 'Major bombeiro militar'}
+  context 'busca ocupações' do
+    it 'por nome, retornando hash com todas que combinem com a busca' do
+      resultado = {
+        '020115' => 'Major da polícia militar',
+        '030110' => 'Major bombeiro militar'
+      }
+      cbo.buscar_ocupacoes('major').should == resultado
+    end
+
+    it 'com caracteres especiais' do
+      resultado = { '252305' => 'Secretária(o) executiva(o)' }
+      cbo.buscar_ocupacoes('secretária(o)').should == resultado
+
+      resultado = { '111220' => 'Secretário - executivo' }
+      cbo.buscar_ocupacoes('secretário -').should == resultado
+
+      resultado = { '225335' => 'Médico patologista clínico / medicina laboratorial' }
+      cbo.buscar_ocupacoes('clínico /').should == resultado
+    end
   end
 end
