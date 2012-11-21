@@ -25,7 +25,7 @@ describe 'Cbo' do
 
     it 'com caracteres especiais' do
       resultado = { '252305' => 'Secretária(o) executiva(o)' }
-      cbo.buscar_ocupacoes('secretária(o)').should == resultado
+      cbo.buscar_ocupacoes('secretária(o) executiva(o').should == resultado
 
       resultado = { '111220' => 'Secretário - executivo' }
       cbo.buscar_ocupacoes('secretário -').should == resultado

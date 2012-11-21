@@ -30,7 +30,7 @@ module CBO
     private
 
     def limpar_para_regex(string)
-      string.sub('(', '\(').sub(')', '\)').sub('/', '\/').sub('-', '\-')
+      string.gsub('(', '\(').gsub(')', '\)').gsub('/', '\/').gsub('-', '\-')
     end
 
     def carregar_ocupacoes
