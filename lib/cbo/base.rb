@@ -16,6 +16,7 @@ module CBO
     end
 
     def buscar_ocupacoes(nome_ocupacao)
+      nome_ocupacao = limpar_para_regex(nome_ocupacao)
       regex = /.*#{nome_ocupacao}.*/i
       encontrados = {}
       @ocupacoes.each do |codigo, nome|
@@ -27,6 +28,10 @@ module CBO
     end
 
     private
+
+    def limpar_para_regex(string)
+      string.sub('(', '\(').sub(')', '\)').sub('/', '\/').sub('-', '\-')
+    end
 
     def carregar_ocupacoes
       @ocupacoes = {}
